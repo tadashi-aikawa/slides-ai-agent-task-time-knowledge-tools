@@ -4,8 +4,8 @@ import { cva } from "class-variance-authority";
 const chapters = [
   "輪郭を支える3つの柱",
   "汝のターミナルを愛せよ",
-  "Diffを制する者はすべてを制す",
   "思考の速度で移動せよ",
+  "Diffを制する者はすべてを制す",
 ] as const;
 
 type ChapterState = "current" | "done" | "upcoming";

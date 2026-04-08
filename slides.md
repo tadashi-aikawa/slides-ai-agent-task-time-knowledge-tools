@@ -115,7 +115,7 @@ layout: fact
     <span class="link-card-v2-site-name">GitHub</span>
   </div>
   <div class="link-card-v2-title">
-    GitHub - tadashi-aikawa/kokukoku: A Hammerspoon Spoon for tracking time spent on each project.
+    GitHub - tadashi-aikawa/kokukoku
   </div>
     <div class="link-card-v2-content">
     A Hammerspoon Spoon for tracking time spent on each project. - tadashi-aikawa/kokukoku
@@ -337,13 +337,303 @@ export _ZO_FZF_OPTS="
 </div>
 
 ---
+layout: fact
+---
+
+# Yazi
+
+<div class="link-card-v2">
+  <div class="link-card-v2-site">
+    <img class="link-card-v2-site-icon" src="https://yazi-rs.github.io/webp/logo.webp" />
+    <span class="link-card-v2-site-name">yazi-rs.github.io</span>
+  </div>
+  <div class="link-card-v2-title">
+    Yazi
+  </div>
+    <div class="link-card-v2-content">
+    Blazing fast terminal file manager written in Rust, based on async I/O.
+  </div>
+  <img class="link-card-v2-image" src="https://yazi-rs.github.io/webp/logo.webp" />
+  <a href="https://yazi-rs.github.io/"></a>
+</div>
+
+<footer class="text-center">
+
+Finderをやめられない人のためのTUIファイルマネージャー
+
+</footer>
+
+---
+layout: image
+image: ./attachments/yazi.avif
+backgroundSize: cover
+backgroundPosition: left top
+---
+
+---
+layout: full
+---
+
+<Youtube id="sfIYRxqzcbc" height="100%" width="100%" class="mx-auto" />
+
+---
+layout: full
+---
+
+<Youtube id="ausMf9CptXE" height="100%" width="100%" class="mx-auto" />
+
+---
+
+# Yaziを閉じたら『最後にYaziで見ていたディレクトリ』に移動
+
+```bash [~/.zshrc]
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+```
+
+そして `yazi` ではなく `y` コマンドで起動する。
+
+<refer>
+
+[Quick Start | Yazi](https://yazi-rs.github.io/docs/quick-start#shell-wrapper)
+
+</refer>
+
+---
+
+# 他に便利な機能
+
+<div class="link-card-v2">
+  <div class="link-card-v2-site">
+    <img class="link-card-v2-site-icon" src="https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/favicon-32.png" />
+    <span class="link-card-v2-site-name">Minerva</span>
+  </div>
+  <div class="link-card-v2-title">
+    📘TUIファイルマネージャー『Yazi』がFinderを置き換える - Minerva
+  </div>
+    <div class="link-card-v2-content">
+    macOSのFinderに不満がある方へ。ターミナルで使えるTUIファイルマネージャー「Yazi」の導入方法やおすすめ機能、プラグイン、カスタマイズ例を詳しく解説します。UTF-8対応や直感的なキーバインド、画像プレビュー、 ... 
+  </div>
+  <img class="link-card-v2-image" src="https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/%F0%9F%93%98Articles/attachments/2025-09-14.webp" />
+  <a href="https://minerva.mamansoft.net/2025-09-14-yazi-tui-file-manager-finder-replacement"></a>
+</div>
+
+---
+layout: fact
+---
+
+# Neovim
+
+<div class="link-card-v2">
+  <div class="link-card-v2-site">
+    <img class="link-card-v2-site-icon" src="https://neovim.io/favicon.ico" />
+    <span class="link-card-v2-site-name">Neovim</span>
+  </div>
+  <div class="link-card-v2-title">
+    Neovim
+  </div>
+    <div class="link-card-v2-content">
+    hyperextensible Vim-based text editor
+  </div>
+  <img class="link-card-v2-image" src="https://neovim.io/logos/neovim-logo-social-preview.png" />
+  <a href="https://neovim.io/"></a>
+</div>
+
+<footer class="text-center">
+
+ターミナルでいくつ立ちあげてもマッハな最強エディタ
+
+</footer>
+
+---
+
+# なぜNeovim？
+
+- 軽い
+  - いくつ立ち上げてもサクサク
+    - ただし、プラグインや設定によって重くなるリスクはある
+  - 私の環境だと起動速度は **35ms ~ 40ms**
+    - 80プラグイン (ただし、起動直後にロードされるのは10)
+- 効率的なキー操作
+  - モードを筆頭に、モーション・オペレーター・テキストオブジェクトなど
+  - 他エディタ利用ときもVimプラグインでほぼ同等の体験が可能
+- 圧倒的カスタマイズ性
+  - 設定やプラグインで見た目/操作を自分好みにできる
+  - **AI Agentにより独自設定/プラグイン作成の敷居が大幅に下がった**
+
+---
+
+# Vimの基本操作や魅力が分からないなら
+
+<div class="link-card-v2">
+  <div class="link-card-v2-site">
+    <img class="link-card-v2-site-icon" src="https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/favicon-32.png" />
+    <span class="link-card-v2-site-name">Minerva</span>
+  </div>
+  <div class="link-card-v2-title">
+    📒1時間でVimに惚れるチュートリアル - Minerva
+  </div>
+    <div class="link-card-v2-content">
+    Vim tutorっぽいやつです。
+  </div>
+  <img class="link-card-v2-image" src="https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/%F0%9F%93%971%E6%99%82%E9%96%93%E3%81%A7Vim%E3%81%AB%E6%83%9A%E3%82%8C%E3%82%8B%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/attachments/vim-tutorial.webp" />
+  <a href="https://minerva.mamansoft.net/%F0%9F%93%971%E6%99%82%E9%96%93%E3%81%A7Vim%E3%81%AB%E6%83%9A%E3%82%8C%E3%82%8B%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/%F0%9F%93%921%E6%99%82%E9%96%93%E3%81%A7Vim%E3%81%AB%E6%83%9A%E3%82%8C%E3%82%8B%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB"></a>
+</div>
+
+---
+
+# 体系的にNeovimを学びたいなら
+
+<div class="link-card-v2">
+  <div class="link-card-v2-site">
+    <img class="link-card-v2-site-icon" src="https://static.zenn.studio/images/logo-transparent.png" />
+    <span class="link-card-v2-site-name">Zenn</span>
+  </div>
+  <div class="link-card-v2-title">
+    Neovimをはじめよう feat. mini.nvim
+  </div>
+    <div class="link-card-v2-content">
+    本書はVim駅伝の2025-04-14に寄稿しました。Neovim自体の基本的な操作の解説およびNeovimプラグインのmini.nvimが（本書執筆時点で）有するほぼすべてのモジュールの紹介を行っています。また、設 ... 
+  </div>
+  <img class="link-card-v2-image" src="https://res.cloudinary.com/zenn/image/upload/s--CDbzVfLD--/g_center%2Ch_280%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYm9va19jb3Zlci80M2UxY2YxOWUxLmpwZWc=%2Cw_200/v1627283836/default/og-base-book_yz4z02.jpg?_a=BACAGSGT" />
+  <a href="https://zenn.dev/kawarimidoll/books/6064bf6f193b51"></a>
+</div>
+
+---
 title: Chapter3
 layout: chapter-divider
 activeChapter: 3
 ---
 
 ---
+layout: fact
+---
 
+# JINRAI
+
+<div class="link-card-v2">
+  <div class="link-card-v2-site">
+    <img class="link-card-v2-site-icon" src="https://github.githubassets.com/favicons/favicon.svg" />
+    <span class="link-card-v2-site-name">GitHub</span>
+  </div>
+  <div class="link-card-v2-title">
+    GitHub - tadashi-aikawa/jinrai
+  </div>
+    <div class="link-card-v2-content">
+    A Hammerspoon script for switching and recognizing windows at the speed of thought ⚡ - tadashi-aikawa/jinrai
+  </div>
+  <img class="link-card-v2-image" src="https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/Notes/attachments/jinrai.svg" />
+  <a href="https://github.com/tadashi-aikawa/jinrai"></a>
+</div>
+
+<footer class="text-center">
+
+**複数ウィンドウ → 1つのウィンドウ** へ素早く正確にフォーカス
+
+</footer>
+
+---
+
+# Why JINRAI ?
+
+<img class="h-90% mx-auto" src="./public/attachments/jinrai.avif" />
+
+---
+layout: full
+---
+
+<Youtube id="clwLqNw0kXw" height="100%" width="100%" class="mx-auto" />
+
+---
+layout: fact
+---
+
+<div class="link-card-v2">
+  <div class="link-card-v2-site">
+    <img class="link-card-v2-site-icon" src="https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/favicon-32.png" />
+    <span class="link-card-v2-site-name">Minerva</span>
+  </div>
+  <div class="link-card-v2-title">
+    📘至高のウィンドウ切り替えを目指して『JINRAI(迅雷)』をつくった - Minerva
+  </div>
+    <div class="link-card-v2-content">
+    macOSのウィンドウ切り替えに悩み、AltTabやミッションコントロールの課題を整理してHammerspoon製スクリプトJINRAIを開発しました。Window Hintsなどの機能で、キーボードだけで直感的かつ確定的に ... 
+  </div>
+  <img class="link-card-v2-image" src="https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/%F0%9F%93%98Articles/attachments/2026-03-01.webp" />
+  <a href="https://minerva.mamansoft.net/2026-03-01-jinrai-ultimate-window-switching"></a>
+</div>
+
+---
+layout: fact
+---
+
+# Homerow
+
+<div class="link-card-v2">
+  <div class="link-card-v2-site">
+    <img class="link-card-v2-site-icon" src="https://www.homerow.app/favicon.png" />
+    <span class="link-card-v2-site-name">www.homerow.app</span>
+  </div>
+  <div class="link-card-v2-title">
+    Homerow | Keyboard shortcuts for every button in macOS
+  </div>
+  <img class="link-card-v2-image" src="https://homerow.app/og-main.png" />
+  <a href="https://www.homerow.app/"></a>
+</div>
+
+<footer class="text-center">
+
+**アクティブウィンドウ内のターゲット要素** を素早く正確にクリック
+
+</footer>
+
+---
+
+# TODO
+
+- 通常の起動
+- インクリメンタルの絞り込み
+- おまけでVimium
+
+---
+layout: fact
+---
+
+# Karabiner-Elements
+
+<div class="link-card-v2">
+  <div class="link-card-v2-site">
+    <img class="link-card-v2-site-icon" src="https://karabiner-elements.pqrs.org/favicons/favicon-32x32.png" />
+    <span class="link-card-v2-site-name">Karabiner-Elements</span>
+  </div>
+  <div class="link-card-v2-title">
+    Karabiner-Elements
+  </div>
+    <div class="link-card-v2-content">
+    Karabiner-Elements A powerful and stable keyboard customizer for macOS. Download v15.9.0 Toggle Dropdown Downloa ... 
+  </div>
+  <img class="link-card-v2-image" src="https://karabiner-elements.pqrs.org/images/logo.png" />
+  <a href="https://karabiner-elements.pqrs.org/"></a>
+</div>
+
+<footer class="text-center">
+
+すべてのキーマップを自由自在のカスタマイズ
+
+</footer>
+
+---
+
+# TODO
+
+- 設定ファイルのツラミ
+- karabiner.ts
+- tokiの紹介
 
 ---
 title: Chapter4
